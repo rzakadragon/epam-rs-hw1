@@ -177,22 +177,49 @@ aside button:hover {
 }
 
 .main aside {
-    position: absolute;
+    position: fixed;
     right: 25px;
     bottom: 25px;
+    bottom: 25px;
+    /*z-index: 200;*/
 }
 
-.main table {
-    width: 96%;
+/*
+ *  vertical lines for both tables 
+ */
+table.vertical-lines-background {
+    position: fixed;
+    /*width: 100%;*/
+    width: calc(100% - 17px );
+    height: calc( 100vh - 150px );
+}
+table.vertical-lines-background td:first-child {
+    width: 4%;
+    border-left: none;
+}
+table.vertical-lines-background td {
+    width: 13.71%;
+    border-left: 1px solid #EEE;
+}
+
+
+.week-wrapper {
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    top: 150px;
+    border-bottom: 1px solid #EEE;
 }
 
 table.week {
-    height: 180px;
+    width: 96%;
+    height: 100%;
     margin-left: 4%;
+    /*z-index: 200;*/
 }
 table.week th,
 table.week td {
-    border-left: 1px solid #EEEEEE;
+    /*border-left: 1px solid #EEEEEE;*/
     width: 14.28%;
 }
 
@@ -204,17 +231,85 @@ table.week th span {
 }
 
 tr.weekdays th span:nth-child(1) {
-    font-size: 21px;
-    line-height: 22px;
+    /*font-size: 21px;
+    line-height: 22px;*/
+    font-size: 18px;
+    line-height: 18px;
     /*font-weight: 400;*/
     font-weight: 500;
 }
 
 tr.weekdays th span:nth-child(2) {
-    font-size: 80px;
-    line-height: 80px;
+    /*font-size: 80px;
+    line-height: 80px;*/
+    font-size: 65px;
+    line-height: 65px;
     font-weight: 400;
 }
+
+.events-wrapper {
+    width: 100%;
+    height: calc(100vh - 330px);
+    overflow-y: auto;
+    position: absolute;
+    top: 330px;
+}
+/*.events-wrapper::-webkit-scrollbar {
+    display: none;
+}*/
+
+
+table.events {
+    width: 100%;
+    /*position: absolute;*/
+    top: 150px;
+    /*z-index: 100;*/
+}
+
+/*table.events thead td {
+    height: 180px;
+}*/
+
+table.events tbody {
+    /*border-top: 1px solid #EEE;*/
+}
+
+table.events td {
+    height: 30px;
+    width: 13.71%;
+    /*border-left: 1px solid #EEE;*/
+}
+
+table.events tr:nth-child(even) td {
+    border-bottom: 1px solid #eee;
+}
+
+table.events tr td.time {
+    width: 4%;
+    vertical-align: bottom;
+    border-top: none;
+}
+
+table.events td.time span {
+    float: right;
+    margin-right: 5px;
+    margin-bottom: -13px;
+    text-transform: uppercase;
+    color: #9E9E9E;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ==========================================================================
    Media Queries
