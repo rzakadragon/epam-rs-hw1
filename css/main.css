@@ -57,12 +57,12 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px 'Roboto', sans-serif, Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+    width: 100%;
+    /*margin: 0 5%;*/
 }
 
 /* ===================
@@ -123,7 +123,7 @@ nav a:hover {
    ============== */
 
 .main {
-    padding: 30px 0;
+    /*padding: 30px 0;*/
 }
 
 .main article h1 {
@@ -182,12 +182,39 @@ aside button:hover {
     bottom: 25px;
 }
 
+.main table {
+    width: 96%;
+}
 
+table.week {
+    height: 180px;
+    margin-left: 4%;
+}
+table.week th,
+table.week td {
+    border-left: 1px solid #EEEEEE;
+    width: 14.28%;
+}
 
+table.week th span {
+    display: block;
+    padding: 0 10%;
+    width: 80%;
+    text-align: left;
+}
 
+tr.weekdays th span:nth-child(1) {
+    font-size: 21px;
+    line-height: 22px;
+    /*font-weight: 400;*/
+    font-weight: 500;
+}
 
-
-
+tr.weekdays th span:nth-child(2) {
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 400;
+}
 
 /* ==========================================================================
    Media Queries
