@@ -256,19 +256,19 @@ tr.weekdays th span:nth-child(2) {
     height: 65%;
     height: calc(100vh - 365px);
     overflow-y: auto;
+    overflow-x: hidden;
     position: absolute;
     top: 365px;
 }
+
 /*.events-wrapper::-webkit-scrollbar {
     display: none;
 }*/
 
-
+/* 100% + 0.7% to pull it a bit under scrollbar to aliign it to top table */
 table.events {
-    width: 100%;
-    /*position: absolute;*/
+    width: 100.7%;
     top: 150px;
-    /*z-index: 100;*/
 }
 
 /*table.events thead td {
