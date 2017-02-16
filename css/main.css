@@ -269,6 +269,7 @@ aside button:hover {
  *  vertical lines for both tables 
  */
 table.vertical-lines-background {
+    display: none;
     position: fixed;
     width: 98%;
     width: calc(100% - 17px );
@@ -288,10 +289,16 @@ table.vertical-lines-background td {
 .week-wrapper {
     width: 100%;
     width: calc(100% - 17px);
-    height: 215px;
-    position: absolute;
+    height: 225px;
+    /* position: absolute; */
     top: 150px;
     border-bottom: 1px solid #EEE;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+    background: white;
+    z-index: 150;
 }
 
 table.week {
@@ -300,15 +307,15 @@ table.week {
     margin-left: 4%;
     /*z-index: 200;*/
 }
-table.week th,
-table.week td {
-    /*border-left: 1px solid #EEEEEE;*/
+tr.weekdays th {
+    border-left: 1px solid #EEE;
     width: 14.28%;
+    width: 13.43%;
     padding-bottom: 10px;
     padding-top: 15px;
 }
 
-table.week th span {
+tr.weekdays th span {
     display: block;
     padding: 0 10%;
     width: 80%;
@@ -333,13 +340,13 @@ tr.weekdays th span:nth-child(2) {
 }
 
 .events-wrapper {
-    width: 100%;
+    width: 98%;
     height: 65%;
-    height: calc(100vh - 365px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: absolute;
-    top: 365px;
+    /* height: calc(100vh - 375px); */
+    /* overflow-y: visible; */
+    /* overflow-x: hidden; */
+    /* position: absolute; */
+    top: 375px;
 }
 
 /*.events-wrapper::-webkit-scrollbar {
@@ -348,12 +355,25 @@ tr.weekdays th span:nth-child(2) {
 
 /* 100% + 0.7% to pull it a bit under scrollbar to aliign it to top table */
 table.events {
-    width: 100.7%;
-    top: 150px;
+    width: 100%;
+    /*top: 150px;*/
 }
 
-/*table.events thead td {
-    height: 180px;
+.events thead tr.weekdays {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 200;
+}
+
+.weekdays {
+    height: 120px;
+}
+
+/*table.events thead td,
+table.events thead th {
+    border-left: 1px solid #eee;
 }*/
 
 table.events tbody {
@@ -362,16 +382,17 @@ table.events tbody {
 
 table.events td {
     height: 30px;
-    width: 13.71%;
-    /*border-left: 1px solid #EEE;*/
+    /*width: 13.71%;*/
+    border-left: 1px solid #EEE;
 }
 
 table.events tr:nth-child(even) td {
     border-bottom: 1px solid #eee;
 }
 
-table.events tr td.time {
-    width: 4%;
+table.events tr td.time,
+table.events tr th.time {
+    width: 6%;
     vertical-align: bottom;
     border-top: none;
     padding: 0;
@@ -433,7 +454,7 @@ table.events td {
     border-bottom: 1px solid #9e9e9e;
 }
 
-table.events .event {
+table.events tbody .event {
     position: absolute;
     padding: 1% 1%;
     width: 10.71%;
@@ -472,7 +493,7 @@ table.events .e-30min {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     background: #212121;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    z-index: 200;
+    z-index: 300;
 }
 
 .sidebar-container aside {
@@ -608,7 +629,7 @@ table.events .e-30min {
     transition: all 0.1s cubic-bezier(.25,.8,.25,1);
     background: rgba(0, 0, 0, 0.15);
     box-shadow: 200px 0px 300px rgba(0,0,0,0.15);
-    z-index: 100;
+    z-index: 200;
 }
 
 .sidebar-curtine label {
@@ -617,6 +638,7 @@ table.events .e-30min {
     height: 100%;
     cursor: pointer;
 }
+
 
 
 
