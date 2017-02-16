@@ -156,7 +156,89 @@ nav a:hover {
 
 .header-container header {
     height: 150px;
-} 
+    padding-top: 10px;
+}
+
+.control {
+    height: 60px;
+    position: relative;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.burger-menu,
+.close-burger-menu,
+.month-icon,
+.dot-menu {
+    width: 60px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.burger-menu label,
+.close-burger-menu label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("/img/burger.png");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;   
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+/*.month-picklist:hover,*/
+.dot-menu:hover,
+.burger-menu label:hover,
+.close-burger-menu label:hover {
+    background-position-y: 46%;
+    background-color: rgba(255,255,255,0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.month-picklist {
+    font-size: 48px;
+    width: 270px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.month-picklist:hover select {
+    /*text-decoration: underline;*/
+    border-bottom: 2px solid #222;
+}
+
+.month-picklist select {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    position: absolute;
+}
+
+.month-picklist select:focus {
+    outline: none;
+    border-bottom: 2px solid transparent;
+}
+
+.month-picklist span {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+}
+
+option {
+    font-size: 0.6em;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
 
 aside button {
     width: 68px;
@@ -358,6 +440,175 @@ table.events .e-30min {
 .e-180min {
     height: 156px;
 }
+
+/*
+ *  sidebar
+ */
+#showsidebar:checked ~ .sidebar-container,
+#showsidebar:checked ~ .sidebar-curtine {
+    left: 0;
+}
+
+.sidebar-container {
+    position: fixed;
+    height: 100%;
+    width: 500px;
+    max-width: 90%;
+    top: 0;
+    left: -550px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background: #212121;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    z-index: 200;
+}
+
+.sidebar-container aside {
+    height: 100%;
+    width: 100%;
+    width: calc(100% - 10px);
+    padding: 10px 0;
+}
+
+.close-burger-menu label {
+    background: url("/img/close.svg");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sidebar-content {
+    width: 90%;
+    height: 90%;
+    height: calc(95% - 70px);
+    margin-top: 70px;
+    padding: 5%;
+}
+
+.sidebar-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-content li {
+    font-size: 36px;
+    line-height: 58px;
+    text-align: center;
+    color: #E0E0E0;
+    margin-top: 6%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border: 1px solid transparent;
+}
+
+.sidebar-content li:hover {
+    color: #FAFAFA;
+    border: 1px solid #FAFAFA;
+}
+
+.month-icon {
+    background: url("/img/month.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: initial;
+}
+
+.dot-menu {
+    background: url("/img/dots.png");
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.dot-menu>label {
+    height: 100%;
+    position: absolute;
+}
+
+.dot-menu label {
+    width: 100%;
+    cursor: pointer;
+}
+
+#showdropmenu:checked ~ .drop-menu {
+    top: 0;
+}
+
+#showdropmenu:checked ~ .drop-menu-curtine {
+    display: block;
+}
+
+.drop-menu {
+    position: absolute;
+    width: 300px;
+    height: 360px;
+    background: #FAFAFA;
+    right: 0;
+    top: -500px;
+    z-index: 300;
+    cursor: initial;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);    
+}
+
+.drop-menu ul {
+    list-style: none;
+    padding: 0 20px;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.drop-menu li {
+    margin-bottom: 10px;
+}
+
+.drop-menu li:hover {
+    text-decoration: underline;
+}
+
+.drop-menu-curtine {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.15);
+    z-index: 200;
+}
+
+.drop-menu-curtine label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar-curtine {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: -200%;
+    transition: all 0.1s cubic-bezier(.25,.8,.25,1);
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 200px 0px 300px rgba(0,0,0,0.15);
+    z-index: 100;
+}
+
+.sidebar-curtine label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+
+
+
 
 
 

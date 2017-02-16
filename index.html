@@ -19,9 +19,56 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <input type="checkbox" name="showsidebar" id="showsidebar" class="hidden">
+
         <div class="header-container">
             <header class="wrapper clearfix">
-                
+
+                <div class="control left burger-menu">
+                    <label for="showsidebar"></label>
+                </div>
+
+                <div class="control left month-picklist">
+                    <span>&#x25be</span>
+                    <select name="select">
+                        <option value="January">January</option>
+                        <option value="February" selected>February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>                        
+                    </select>
+                </div>
+
+                <div class="control right dot-menu">
+                    <label for="showdropmenu"></label>
+                    
+                    <input type="checkbox" id="showdropmenu" class="hidden">
+
+                    <div class="drop-menu">
+                        <ul>
+                            <li><label for="showdropmenu">Option 1</label></li>
+                            <li><label for="showdropmenu">Option 2</label></li>
+                            <li><label for="showdropmenu">Option 3</label></li>
+                            <li><label for="showdropmenu">Option 4</label></li>
+                            <li><label for="showdropmenu">Option 5</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="drop-menu-curtine">
+                        <label for="showdropmenu"></label>
+                    </div>
+
+                </div>
+
+                <div class="control right month-icon"></div>
+
             </header>
         </div>
 
@@ -690,6 +737,27 @@
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
+
+        <div class="sidebar-container">
+            <aside>
+                <div class="control left close-burger-menu">
+                    <label for="showsidebar"></label>
+                </div>
+                <div class="sidebar-content">
+                    <ul>
+                        <li>Loren ipsum</li>
+                        <li>Loren ipsum</li>
+                        <li>Loren ipsum</li>
+                        <li>Loren ipsum</li>
+                        <li>Loren ipsum</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <div class="sidebar-curtine">
+            <label for="showsidebar"></label>
+        </div>
 
     </body>
 </html>
