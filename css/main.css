@@ -194,7 +194,6 @@ nav a:hover {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-/*.month-picklist:hover,*/
 .dot-menu:hover,
 .burger-menu label:hover,
 .close-burger-menu label:hover {
@@ -205,7 +204,7 @@ nav a:hover {
 
 .month-picklist {
     font-size: 48px;
-    width: 270px;
+    width: 240px;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -653,6 +652,41 @@ table.events .e-30min {
         width: 57%;
     }
 
+}
+
+@media only screen and (max-width: 480px) {
+    .header-container {
+        background: white;
+        height: 60px;
+    }
+
+    .header-container header {
+        height: 100%;
+        padding: 0;
+    }
+
+    .burger-menu, .close-burger-menu, .month-icon, .dot-menu {
+        width: 45px;
+        margin: 0;
+    }
+
+    .month-picklist {
+        font-size: 18px;
+        width: 115px;
+    }
+
+    .month-picklist select {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .month-picklist span {
+        right: -2px;
+        font-size: 36px;
+    }
+    /*.right {
+        float: left;
+    }*/
 }
 
 /* ==========================================================================
