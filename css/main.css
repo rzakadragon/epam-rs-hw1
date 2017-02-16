@@ -338,10 +338,26 @@ table.events td {
     color: #9E9E9E;
 }
 
+table.events .event {
+    position: absolute;
+    padding: 1% 1%;
+    width: 10.71%;
+    margin: 0;
+}
 
-
-
-
+table.events .e-30min {
+    height: 30px;
+    padding: 0 1%;
+}
+.e-60min {
+    height: 33px;
+}
+.e-90min {
+    height: 65px;
+}
+.e-180min {
+    height: 156px;
+}
 
 
 
