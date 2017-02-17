@@ -293,6 +293,9 @@ tr.weekdays th span:nth-child(2) {
 }
 
 .events-wrapper {
+
+    display: none;
+
     width: 100%;
     height: 65%;
     top: 375px;
@@ -583,6 +586,53 @@ table.events .e-30min {
     height: 100%;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.magic-table-wrapper {
+    border: 3px solid #db4437;
+}
+
+.magic-table-wrapper table {
+    /*border: 3px solid #eee;*/
+    height: 100vw;
+    transform: rotate(-90deg);
+    margin-left: -25px;
+}
+
+.magic-table-wrapper thead th {
+    transform: rotate(90deg);
+    font-size: 18px;
+    height: 100px;
+    border-bottom: 1px solid #eee;
+}
+
+.magic-table-wrapper thead th span {
+    position: absolute;
+    width: 80px;
+    left: 0%;
+    top: 60%;
+}
+
+.magic-table-wrapper tbody td {
+    width: 30px;
+    height: 100px;
+    border-bottom: 1px solid #EEE;
+}
+
+.magic-table-wrapper tbody td:nth-last-of-type(even) {
+    border-left: 1px solid #EEE;
+}
+
 
 
 
