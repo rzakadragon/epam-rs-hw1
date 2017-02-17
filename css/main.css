@@ -228,7 +228,7 @@ nav a:hover {
 
 .month-picklist span {
     position: absolute;
-    right: -15px;
+    right: -8px;
     top: 60%;
     transform: translateY(-50%);
     font-size: 60px;
@@ -265,48 +265,6 @@ aside button:hover {
     /*z-index: 200;*/
 }
 
-/*
- *  vertical lines for both tables 
- */
-table.vertical-lines-background {
-    display: none;
-    position: fixed;
-    width: 98%;
-    width: calc(100% - 17px );
-    height: 85%;
-    height: calc( 100vh - 150px );
-}
-table.vertical-lines-background td:first-child {
-    width: 4%;
-    border-left: none;
-}
-table.vertical-lines-background td {
-    width: 13.71%;
-    border-left: 1px solid #EEE;
-}
-
-
-.week-wrapper {
-    width: 100%;
-    width: calc(100% - 17px);
-    height: 225px;
-    /* position: absolute; */
-    top: 150px;
-    border-bottom: 1px solid #EEE;
-
-    position: -webkit-sticky;
-    position: sticky;
-    top: -1px;
-    background: white;
-    z-index: 150;
-}
-
-table.week {
-    width: 96%;
-    height: 100%;
-    margin-left: 4%;
-    /*z-index: 200;*/
-}
 tr.weekdays th {
     border-left: 1px solid #EEE;
     width: 14.28%;
@@ -323,40 +281,25 @@ tr.weekdays th span {
 }
 
 tr.weekdays th span:nth-child(1) {
-    /*font-size: 21px;
-    line-height: 22px;*/
     font-size: 18px;
     line-height: 18px;
-    /*font-weight: 400;*/
     font-weight: 500;
 }
 
 tr.weekdays th span:nth-child(2) {
-    /*font-size: 80px;
-    line-height: 80px;*/
     font-size: 65px;
     line-height: 65px;
     font-weight: 400;
 }
 
 .events-wrapper {
-    width: 98%;
+    width: 100%;
     height: 65%;
-    /* height: calc(100vh - 375px); */
-    /* overflow-y: visible; */
-    /* overflow-x: hidden; */
-    /* position: absolute; */
     top: 375px;
 }
 
-/*.events-wrapper::-webkit-scrollbar {
-    display: none;
-}*/
-
-/* 100% + 0.7% to pull it a bit under scrollbar to aliign it to top table */
 table.events {
     width: 100%;
-    /*top: 150px;*/
 }
 
 .events thead tr.weekdays {
@@ -364,6 +307,7 @@ table.events {
     position: sticky;
     top: -1px;
     background: rgba(255, 255, 255, 0.5);
+    /*background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.5) 100%);*/
     z-index: 200;
 }
 
@@ -371,18 +315,8 @@ table.events {
     height: 120px;
 }
 
-/*table.events thead td,
-table.events thead th {
-    border-left: 1px solid #eee;
-}*/
-
-table.events tbody {
-    /*border-top: 1px solid #EEE;*/
-}
-
 table.events td {
     height: 30px;
-    /*width: 13.71%;*/
     border-left: 1px solid #EEE;
 }
 
@@ -411,8 +345,14 @@ table.events td.time span {
  */
 table.week td,
 table.events td {
-    padding: 0 10px;
+    padding: 0 12px 0 10px;
     vertical-align: baseline;
+}
+
+.event-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .event {
@@ -456,9 +396,11 @@ table.events td {
 
 table.events tbody .event {
     position: absolute;
-    padding: 1% 1%;
-    width: 10.71%;
+    box-sizing: border-box;
+    padding: 1% 3%;
+    width: 100%;
     margin: 0;
+    overflow: auto;
 }
 
 table.events .e-30min {
@@ -529,9 +471,12 @@ table.events .e-30min {
     text-align: center;
     color: #E0E0E0;
     margin-top: 6%;
-    cursor: pointer;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     border: 1px solid transparent;
+}
+.sidebar-content li label,
+.sidebar-content li {
+    cursor: pointer;
 }
 
 .sidebar-content li:hover {
