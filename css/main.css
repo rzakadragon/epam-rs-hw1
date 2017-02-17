@@ -639,6 +639,18 @@ table.events .e-30min {
     .header-container {
         background: white;
         height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .main-container {
+        position: fixed;
+        top: 60px;
+        height: calc(100vh - 60px);
+        width: 100%;
+        overflow: auto;
     }
 
     .header-container header {
@@ -662,12 +674,18 @@ table.events .e-30min {
     }
 
     .month-picklist span {
-        right: -2px;
-        font-size: 36px;
+        display: none;
     }
-    /*.right {
-        float: left;
-    }*/
+
+    .month-picklist select {
+        width: 100%;
+    }
+
+    .month-picklist:hover select {
+        border-bottom: none;
+    }
+    
+    
 }
 
 /* ==========================================================================
